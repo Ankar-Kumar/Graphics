@@ -1,4 +1,5 @@
 
+
 #include<bits/stdc++.h>
 #include<graphics.h>
 using namespace std;
@@ -73,7 +74,7 @@ void lineCLipping(double x0,double y0,double x1,double y1)
     }
     if (flag)
     {
-        setcolor(RED);
+        setcolor(GREEN);
         rectangle(xmin, ymin, xmax, ymax);
         setcolor(BLUE);
         line(x0, y0, x1, y1);
@@ -87,10 +88,11 @@ int main()
     xmax = 500;
     ymin = 10;
     ymax = 300;
-
+    int t=50;
     double x0, y0, x1, y1;
-    x0 = 50, y0 = 50, x1 = 600, y1 = 90;
-// 50 50 600 90
+    while(t--){
+     x0=50,y0=rand(),x1=600,y1=90;
     lineCLipping(x0,y0,x1,y1);
+    }
     getch();
 }

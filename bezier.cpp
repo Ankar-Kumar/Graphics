@@ -18,16 +18,16 @@ void bezier(int x[4], int y[4])
     double xt, yt, t,b;
     int nfact=fact(n-1);
     putpixel(x[0],y[0],RED);
-    for(t = 0.0; t <= 1.0; t += 0.001)
+    for(t = 0.0; t <= 1.0; t += 0.001)   //u===t
     {
         xt=0;yt=0;
         for(int i=0; i<n; i++){
-            b=(nfact*pow(1-t,n-i-1)*pow(t,i)/(fact(n-i-1)*fact(i)));
+            b=(nfact*pow(t,i)*pow(1-t,n-i-1)/(fact(n-i-1)*fact(i)));
             xt+=b*x[i];
             yt+=b*y[i];
         }
         putpixel(xt,yt,WHITE);
-        delay(1);
+        //delay(1);
     }
     putpixel(x[n-1],y[n-1],RED);
     for(int i=0;i<n;i++){
